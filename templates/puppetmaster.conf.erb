@@ -1,4 +1,7 @@
 [master]
+<% if @autosign -%>
+    autosign = <%= @autosign %>
+<% end -%>
 <% if @certname -%>
     certname = <%= @certname %>
 <% end -%>

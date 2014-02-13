@@ -13,6 +13,7 @@ class puppet::master (
     $selinux        = $::selinux,
     $scontext       = 'httpd_passenger_helper_t',
     # puppet.conf options
+    $autosign       = undef,
     $certname       = undef,
     $dns_alt_names  = undef,
     $reports        = undef,
