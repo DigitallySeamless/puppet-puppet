@@ -28,6 +28,7 @@ class puppet::agent (
     $cron_hour          = '*',
     $cron_minute        = fqdn_rand(60),
     # puppet.conf options
+    $logdir             = $::puppet::params::logdir,
     $rundir             = $::puppet::params::rundir,
     $pluginsync         = 'true',
     $report             = false,
@@ -80,7 +81,7 @@ class puppet::agent (
     }
 
     # Lock down puppet logs, to not give everyone read access to them
-    file { '/var/log/puppet':
+    file { $logdir:
         ensure => directory,
         owner  => 'puppet',
         group  => 'puppet',
