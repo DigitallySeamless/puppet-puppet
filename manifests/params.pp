@@ -1,7 +1,11 @@
 # Class: puppet::params
 #
 class puppet::params {
+
+  $logdir = '/var/log/puppet'
+
   case $::operatingsystem {
+    'Archlinux',
     'Fedora',
     'RedHat',
     'CentOS': {
