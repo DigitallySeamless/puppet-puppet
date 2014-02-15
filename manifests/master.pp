@@ -35,7 +35,7 @@ class puppet::master (
     # Package + partial configuration file + concatenation exec
     if $ensure != 'absent' {
 
-        package { 'puppet-server': ensure => installed }
+        package { "$::puppet::params::puppetmasterpkg" : ensure => installed }
         if $storeconfigs {
             package { 'rubygem-activerecord': ensure => installed }
         }
