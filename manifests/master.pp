@@ -28,7 +28,7 @@ class puppet::master (
     $dbsocket       = undef,
     $rsyslog_file   = false,
     $extraopts      = {}
-) {
+) inherits puppet::params {
 
     include puppet::common
 
